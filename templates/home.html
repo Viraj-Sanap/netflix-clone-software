@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Home</title>
+    <link rel="icon" href="/static/n-small.png">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</head>
+<body class='font-primary'>
+    <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
+        <div class="w-6/12">
+            <a href="/home">
+            <img src="/static/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
+            </a>
+        </div>
+
+        <div>
+            <a href="logout" class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
+                Log out
+            </a>
+        </div>
+        
+    </nav>
+    <main class='bg-primary_black min-h-screen w-full'>
+        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover" style="background-image: url('/static/large/red.jpg');">
+            <div>
+                <h2 class="text-6xl font-semibold text-white my-4">
+                    Red Notice
+                </h2>
+                <p class=" w-11/12 md:w-5/12 font-medium text-white my-4">
+                    An FBI profiler pursuing the world's most wanted art thief becomes his reluctant partner in crime to catch an elusive crook who's always one step ahead.
+                    <strong>Cast:</strong> Dwayne Johnson, Ryan Reynolds, Gal Gadot.
+                </p>
+                <div class="flex my-4">
+
+                    <button class="flex items-center bg-white py-2 px-5 rounded-md">
+                        <ion-icon name="play" class="text-2xl"></ion-icon>
+                        <span class="ml-3 font-medium">
+                            Play
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section> 
+        <section class='bg-primary_black  min-h2-screen flex justify-center py-10'>
+            <div class="p-8 w-10/12 relative" >
+                <h2 class="text-gray-200 text-2xl font-medium">
+                    Popular on Netflix
+                </h2>
+                <form action="/home" method="post">
+                <div class="flex justify-center  items-center min-w-full  movie_lis">
+
+                    {% for movie in movies %}
+
+                    <button type="submit" id="moviebutton" name="moviebutton" value="{{movie.movie_id}}" class=" h-40 m-4  bg-blue-500 flex-shrink-0 rounded-md cursor-pointer w-40">
+                        <img src="/static/small/{{movie.img2}}" class="w-full h-full " alt="">
+                    </button>
+
+                    {% endfor %}
+
+
+                </div>
+                    </form>
+            </div>
+        </section>
+
+        <section class='bg-primary_black  min-h2-screen flex justify-center py-10'>
+                <div class="p-8 w-10/12 relative" >
+                <h2 class="text-gray-200 text-2xl font-medium">
+                    Movies Set in India
+                </h2>
+
+
+                    <form action="/home" method="post">
+                <div class="flex justify-center  items-center min-w-full  movie_lis">
+
+                    {% for movieb in moviesb %}
+
+                    <button type="submit" id="moviebutton2" name="moviebutton2" value="{{movieb.movie_id}}"  class=" h-40 m-4  bg-blue-500 flex-shrink-0 rounded-md cursor-pointer w-40">
+                        <img src="/static/small/{{movieb.img2}}" class="w-full h-full " alt="">
+                    </button>
+
+                    {% endfor %}
+                </div>
+                    </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

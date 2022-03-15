@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Profile</title>
+    <link rel="icon" href="/static/n-small.png">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/5bf2661c78.js" crossorigin="anonymous"></script>
+</head>
+<body ng-app="">
+    <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
+        <div class="w-6/12">
+            <img src="/static/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
+        </div>
+
+        
+    </nav>
+    <section class='bg-primary_black min-h-screen py-20 md:py-0 flex-col flex justify-center items-center'>
+        <h2 class="text-center font-medium text-5xl my-4 text-gray-100">
+            Who's watching ?
+        </h2>
+
+        <form action="/" method="post">
+
+        <div class="flex flex-wrap justify-center items-center">
+
+            <a href="home" class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-show="{{p[0]}}">
+            <img src="/static/avatar1.jpg">
+            </a>
+
+            <a href="home" class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-show="{{p[1]}}">
+            <img src="/static/avatar2.png">
+            </a>
+
+            <a href="home" class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-show="{{p[2]}}">
+            <img src="/static/avatar3.png">
+            </a>
+
+            <a href="home" class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-show="{{p[3]}}">
+            <img src="/static/avatar4.png">
+            </a>
+
+
+            <button class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-hide="{{p[0]}}">
+            <img src="/static/avatar-plus.png">
+            </button>
+
+            <button class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-hide="{{p[1]}}">
+            <img src="/static/avatar-plus.png">
+            </button>
+
+            <button class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-hide="{{p[2]}}">
+            <img src="/static/avatar-plus.png">
+            </button>
+
+            <button class="w-32 h-32 m-4  bg-blue-500 rounded-md cursor-pointer" ng-hide="{{p[3]}}">
+            <img src="/static/avatar-plus.png">
+            </button>
+        </div>
+
+            </form>
+
+
+    </section>
+</body>
+</html>
