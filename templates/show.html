@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,29 +10,33 @@
     <link rel="stylesheet" href="/static/style.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <style>
-        .player::-webkit-progress-bar{
+        .player::-webkit-progress-bar {
             color: red;
         }
     </style>
 </head>
+
 <body class='font-primary'>
     <nav class="flex justify-between items-center py-3 bg-gray-900  px-4 w-full z-50">
         <div class="w-6/12">
-            <img src="/static/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
+            <a href="home">
+                <img src="/static/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
+            </a>
         </div>
-        
+
 
         <div>
             <a href="logout" class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
                 Log out
             </a>
         </div>
-        
+
     </nav>
     <main class='bg-primary_black h-full w-full '>
-        
+
         <video src="/static/videos/{{movies.video}}" controls class="w-full h-screen player"></video>
-        
+
     </main>
 </body>
+
 </html>
